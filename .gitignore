@@ -3,6 +3,8 @@
 .sass-cache
 .sass-cache/*
 css/*.map
+/assets/css/*.css
+/assets/css/*.map
 
 # bundling output
 build/*
@@ -18,6 +20,8 @@ node_modules
 # OS X Junk
 .DS_Store
 .DS_Store/*
+.AppleDouble
+.LSOverride
 
 
 # Not-Needed System Files
