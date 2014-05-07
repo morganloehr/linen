@@ -13,6 +13,7 @@ come into play. Have fun!
 ******************************************************************/
 
 
+
 /*********************
 GENERAL STYLES
 *********************/
@@ -43,39 +44,109 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
-#site-navigation {
-	background: #eee;
-	border: 0;
+$sliding-menu-border-color: #333;
+$sliding-menu-background: lighten($sliding-menu-border-color, 5);
+$sliding-menu-color: #fff;
+$sliding-menu-border: 1px solid $sliding-menu-border-color;
+$base-accent-color:#666;
+$sliding-menu-background-hover: $base-accent-color;
+$sliding-menu-color-hover: #fff;
 
-	li {
-		float: left;
-		position: relative;
+.sliding-menu-button {
+  @include button(simple, #fff);
+  @include inline-block;
+  cursor: pointer;
+  font-size: 12px;
+  margin-bottom: 10px;
+  position: relative;
+  outline: none;
 
-		a {
-			border-bottom: 0;
+  img {
+    height: 1.3em;
+  }
+}
+
+.sliding-menu-content {
+  @include position(fixed, 0px auto 0px 0px);
+  @include size(220px 100%);
+  @include transform(translateX(-220px));
+  @include transition(all .25s linear);
+  background: $sliding-menu-background;
+  z-index: 999999;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+
+  li a {
+    border-bottom: $sliding-menu-border;
+    color: $sliding-menu-color;
+    display: block;
+    font-weight: bold;
+    padding: 1em;
+
+    &:hover {
+      background-color: $sliding-menu-background-hover;
+      color: $sliding-menu-color-hover;
+    }
+  }
+
+  &.is-visible {
+    @include transform(translateX(0));
+  }
+}
+
+.menu-screen {
+  @include position(fixed, 0px 0px 0px 0px);
+  @include transition;
+  background: $sliding-menu-border-color;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999998;
+
+  &.is-visible {
+    opacity: .4;
+    visibility: visible;
+  }
+}
+
+
+
+/*********************
+Old Nave
+*********************/
+
+// #site-navigation {
+// 	background: #eee;
+// 	border: 0;
+
+// 	li {
+// 		float: left;
+// 		position: relative;
+
+// 		a {
+// 			border-bottom: 0;
 
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
-			&:hover, &:focus {
-				background-color: #dedede;
+		// 	&:hover, &:focus {
+		// 		background-color: #dedede;
 
-			}
-		}
+		// 	}
+		// }
 
-		&:first-child {}
-		&:last-child {}
+		// &:first-child {}
+		// &:last-child {}
 
 		/* showing sub-menus */
-		&:hover ul {
-			top: auto;
-			display: block;
-		}
+		// &:hover ul {
+		// 	top: auto;
+		// 	display: block;
+		// }
 
-	} /* end .menu ul li */
+	// } /* end .menu ul li */
 
-} /* end .nav */
+// } /* end .nav */
 
 /*********************
 SIDEBARS & ASIDES
