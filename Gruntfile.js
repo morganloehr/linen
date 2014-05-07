@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+
+
     grunt.initConfig({
         paths: {
             scss: './scss',
@@ -46,10 +48,13 @@ module.exports = function(grunt) {
         },
 
         sass: {
+
             admin: {
                 options : {
                     // Only enable sourcemaps if you have Sass 3.3 installed.
                     // sourcemap: true
+                    includePaths: require('node-bourbon').includePaths,
+
                 },
                 files: {
                     '<%= paths.css %>/style.css': '<%= paths.scss %>/style.scss',
@@ -59,17 +64,21 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            sass: {
-                files: './scss/**/*.scss',
-                tasks: ['sass:admin']
-            }
+          options: {
+              includePaths: require('node-bourbon').includePaths,
+
+          },
+          sass: {
+              files: './scss/**/*.scss',
+              tasks: ['sass:admin'],
+          }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    //grunt.loadNpmTasks('grunt-contrib-sass');
+    // grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
