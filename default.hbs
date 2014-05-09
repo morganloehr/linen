@@ -32,6 +32,9 @@
     <link rel='stylesheet' id='linen-ie-only-css'  href="{{asset 'css/ie.css'}}" type='text/css' media='all' />
     <![endif]-->
 
+    <!-- Google Fonts - Need to be edited-->
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,400italic,300,300italic|Merriweather+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 
@@ -42,7 +45,7 @@
 
 <body class="{{body_class}}">
 
-    <div id="container">
+    <div id="container" class="container">
 
         {{! Output the content of the header partial template }}
         {{> header}}
@@ -53,14 +56,14 @@
             <div id="inner-content" class="wrap clearfix">
 
                 {{! The main section uses eight columns in the grid framework }}
-                <main id="main" class="eightcol first clearfix" role="main">
+                <main id="main" class="twelvecol first clearfix" role="main">
                     {{{body}}}
                 </main> <!-- end #main -->
 
                 {{! The sidebar fills in the remaining four columns }}
-                <aside id="sidebar-main" class="sidebar fourcol clearfix" role="complementary">
+               <!--  <aside id="sidebar-main" class="sidebar fourcol clearfix" role="complementary">
                     {{> sidebar}}
-                </aside>
+                </aside> -->
 
             </div> <!-- end #inner-content -->
 
@@ -68,7 +71,7 @@
 
         <footer class="footer" role="contentinfo">
             <div id="inner-footer" class="wrap clearfix">
-                <p class="source-org copyright">© 2013 <a href="http://themespectre.com">Theme Spectre, LLC.</a></p>
+                <p class="source-org copyright">© 2014 <a href="/about">R.L. Arbeit</a></p>
             </div> <!-- end #inner-footer -->
         </footer> <!-- end footer -->
 
