@@ -1,5 +1,9 @@
 {{! This partial will list a post excerpt using the 'excerpt' theme helper in Ghost }}
 <article class="post hentry {{post_class}}">
+    
+    <section class="entry-content clearfix">
+        {{content words="0"}}
+    </section>
 
     <header class="h2 entry-title">
         <a href="{{url}}" rel="bookmark">{{title}}</a>

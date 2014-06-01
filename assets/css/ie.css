@@ -23,32 +23,6 @@ TYPOGRAPHY
  * MONO SOCIAL ICONS FONT
  * http://drinchev.github.io/monosocialiconsfont/
 */
-@font-face {
-  font-family: 'Mono Social Icons Font';
-  src: url('../fonts/monosocial/MonoSocialIconsFont-1.10.eot');
-  src: url('../fonts/monosocial/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'), url('../fonts/monosocial/MonoSocialIconsFont-1.10.woff') format('woff'), url('../fonts/monosocial/MonoSocialIconsFont-1.10.ttf') format('truetype'), url('../fonts/monosocial/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
-  src: url('../fonts/monosocial/MonoSocialIconsFont-1.10.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal; }
-
-.symbol, a.symbol:before {
-  font-family: 'Mono Social Icons Font';
-  -webkit-text-rendering: optimizeLegibility;
-  -moz-text-rendering: optimizeLegibility;
-  -ms-text-rendering: optimizeLegibility;
-  -o-text-rendering: optimizeLegibility;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -ms-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased; }
-
-a.symbol:before {
-  content: attr(title);
-  margin-right: 0.3em;
-  font-size: 130%; }
-
 /* import mixins */
 /******************************************************************
 Site Name:
@@ -138,7 +112,7 @@ probably best not to use it. I mean, were you going to anyway? */
 BUTTONS
 *********************/
 .button, .button:visited {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Merriweather Sans", Helvetica, Arial, sans-serif;
   border: 1px solid #060606;
   border-top-color: #151515;
   border-left-color: #151515;
@@ -158,7 +132,7 @@ BUTTONS
   background-image: -webkit-linear-gradient(top, #272727, #1a1a1a);
   background-image: -moz-linear-gradient(top, #272727, #1a1a1a);
   background-image: -o-linear-gradient(top, #272727, #1a1a1a);
-  background-image: linear-gradient(to bottom, #272727, #1a1a1a); }
+  background-image: linear, to bottom, #272727, #1a1a1a; }
   .button:hover, .button:focus, .button:visited:hover, .button:visited:focus {
     color: #efefef;
     border: 1px solid #060606;
@@ -169,14 +143,14 @@ BUTTONS
     background-image: -webkit-linear-gradient(top, #1a1a1a, #0e0e0e);
     background-image: -moz-linear-gradient(top, #1a1a1a, #0e0e0e);
     background-image: -o-linear-gradient(top, #1a1a1a, #0e0e0e);
-    background-image: linear-gradient(to bottom, #1a1a1a, #0e0e0e); }
+    background-image: linear, to bottom, #1a1a1a, #0e0e0e; }
   .button:active, .button:visited:active {
     background-color: #272727;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#1a1a1a), to(#272727));
     background-image: -webkit-linear-gradient(top, #1a1a1a, #272727);
     background-image: -moz-linear-gradient(top, #1a1a1a, #272727);
     background-image: -o-linear-gradient(top, #1a1a1a, #272727);
-    background-image: linear-gradient(to bottom, #1a1a1a, #272727); }
+    background-image: linear, to bottom, #1a1a1a, #272727; }
 
 /******************************************************************
 Site Name:
@@ -346,31 +320,20 @@ HEADER STYLES
 
 #site-title {
   font-size: 2.5em; }
+  #site-title abbr {
+    top: 50px; }
 
 /*********************
 NAVIGATION STYLES
 *********************/
-#site-navigation {
-  background: #eee;
-  border: 0;
-  /* end .menu ul li */ }
-  #site-navigation li {
-    float: left;
-    position: relative;
-    /* showing sub-menus */ }
-    #site-navigation li a {
-      border-bottom: 0;
-      /*
+/*********************
+Old Nave
+*********************/
+/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
-			*/ }
-      #site-navigation li a:hover, #site-navigation li a:focus {
-        background-color: #dedede; }
-    #site-navigation li:hover ul {
-      top: auto;
-      display: block; }
-
-/* end .nav */
+			*/
+/* showing sub-menus */
 /*********************
 SIDEBARS & ASIDES
 *********************/
